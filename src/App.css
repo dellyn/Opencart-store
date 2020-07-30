@@ -95,3 +95,11 @@ text-align: left;
   padding: 10px;
   margin-top: 15px;
 }
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+  background-color: #ffffff;
+  padding: 5px;
+  border: 10px;
+  box-shadow: 0px 0px 12px -8px;
+}

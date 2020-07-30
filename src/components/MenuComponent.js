@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+
 
     function RenderMenuItem ({dish, onClick}) {
         console.log(dish)

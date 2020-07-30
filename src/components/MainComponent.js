@@ -41,15 +41,7 @@ class Main extends Component {
           />
       );
     }
-    // const AboutPage = () => {
-    //   console.log(this.state.leaders)
 
-    //   return(
-    //       <About 
-    //           leader={this.state.leaders.filter((leader) => leader.featured)[0]}
-    //       />
-    //   );
-    // }
 
     const DishWithId = ({match}) => {
       return(
