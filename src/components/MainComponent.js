@@ -19,6 +19,7 @@ import {
   fetchComments,
   fetchPromos,
   postFeedback,
+  fetchLeaders,
 } from "../redux/ActionCreators";
 
 const mapStateToProps = (state) => {
@@ -35,13 +36,15 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(postComment(dishId, rating, author, comment)),
   fetchDishes: () => {
     dispatch(fetchDishes());
-  },  
+  },
+  fetchLeaders: () => dispatch(fetchLeaders()),
+
   fetchComments: () => dispatch(fetchComments()),
   fetchPromos: () => dispatch(fetchPromos()),
-  // fetchLeaders: () => dispatch(fetchLeaders()),
   resetFeedbackForm: () => {
     dispatch(actions.reset("feedback"));
   },
+
   postFeedback: (
     firstname,
     lastname,
@@ -76,6 +79,7 @@ class Main extends Component {
     this.props.fetchDishes();
     this.props.fetchComments();
     this.props.fetchPromos();
+    this.props.fetchLeaders();
   }
 
   render() {
@@ -93,9 +97,9 @@ class Main extends Component {
           postComment={this.props.postComment}
           promoLoading={this.props.promotions.isLoading}
           promoErrMess={this.props.promotions.errMess}
-          leader={this.props.leaders.filter((leader) => leader.featured)[0]}
-          // leaderLoading={this.props.leaders.isLoading}
-          // leaderErrMess={this.props.leaders.errMess}
+          leader={this.props.leaders.leaders.filter((lead) => lead.featured)[0]}
+          leaderLoading={this.props.leaders.isLoading}
+          leaderErrMess={this.props.leaders.errMess}
         />
       );
     };
@@ -125,7 +129,7 @@ class Main extends Component {
           <CSSTransition
             key={this.props.location.key}
             classNames="page"
-            timeout={200}
+            timeout={150}
           >
             <Switch location={this.props.location}>
               <Route path="/home" component={HomePage} />
