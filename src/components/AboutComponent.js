@@ -8,9 +8,10 @@ import {
   CardBody,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { baseUrl } from "../shared/baseUrl";
 
 const About = (props) => {
-  const people = props.leaders.map((lead) => {
+  const people = props.leaders.leaders.map((lead) => {
     return (
       <Media className="col-12 mt-4" key={lead.id}>
         <Media
@@ -18,7 +19,7 @@ const About = (props) => {
           height="100"
           className="m-2"
           object
-          src={lead.image}
+          src={baseUrl + lead.image}
         />
         <Media body>
           <Media heading>{lead.name}</Media>
