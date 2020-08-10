@@ -56,7 +56,7 @@ export class CommentForm extends Component {
     return (
       <>
         <Button type="submit" onClick={this.toggleModal}>
-          <i className="fa fa-pencil"></i> Submit Comment
+          <i className="fa fa-pencil fa"></i> Submit Comment
         </Button>
 
         <Modal toggle={this.toggleModal} isOpen={this.state.isModalOpen}>
@@ -184,6 +184,11 @@ function RenderDish({ dish }) {
           <CardBody>
             <CardTitle>{dish.name}</CardTitle>
             <CardText>{dish.description}</CardText>
+            <CardText className="price">{dish.price}</CardText>
+            <CardText className="label">{dish.label}</CardText>
+            <Button>
+              Eat now! <i className="fa fa-shopping-cart"></i>
+            </Button>
           </CardBody>
         </Card>
       </FadeTransform>

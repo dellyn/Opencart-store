@@ -4,6 +4,9 @@ import {
   CardImg,
   CardImgOverlay,
   CardTitle,
+  CardText,
+  CardSubtitle,
+  CardBody,
   Breadcrumb,
   BreadcrumbItem,
 } from "reactstrap";
@@ -16,10 +19,19 @@ function RenderMenuItem({ dish }) {
     <Card>
       <Link to={`/menu/${dish.id}`}>
         <CardImg width="100" src={baseUrl + dish.image} alt={dish.name} />
-        <CardImgOverlay>
-          <CardTitle>{dish.name}</CardTitle>
-        </CardImgOverlay>
       </Link>
+
+      {/* <CardImgOverlay> */}
+
+      {/* </CardImgOverlay> */}
+      <CardBody>
+        <Link to={`/menu/${dish.id}`}>
+          <CardTitle>{dish.name}</CardTitle>
+        </Link>
+
+        <CardSubtitle>Card subtitle</CardSubtitle>
+        <CardText>{dish.price}$</CardText>
+      </CardBody>
     </Card>
   );
 }
@@ -27,7 +39,7 @@ function RenderMenuItem({ dish }) {
 const Menu = (props) => {
   const menu = props.dishes.dishes.map((dish) => {
     return (
-      <div className="col-12 col-md-5 m-1" key={dish.id}>
+      <div className="menu-card col-4 col-md-4" key={dish.id}>
         <br></br>
         <RenderMenuItem dish={dish} />
       </div>
@@ -66,7 +78,7 @@ const Menu = (props) => {
             <hr />
           </div>
         </div>
-        <div className="row">{menu}</div>
+        <div className="row menu-lay">{menu}</div>
       </div>
     );
 };

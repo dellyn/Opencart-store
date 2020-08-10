@@ -45,7 +45,7 @@ class Header extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar dark expand="md">
+        <Navbar expand="md">
           <div className="container">
             <NavbarToggler onClick={this.toggleNav} />
 
@@ -61,45 +61,49 @@ class Header extends Component {
               <Nav className="" navbar>
                 <NavItem>
                   <NavLink className="nav-link" to="/home">
-                    <span className="fa fa-home fa-lg">Home</span>
+                    <i className="fa fa-home fa-lg"></i>
+                    Home
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/aboutus">
-                    <span className="fa fa-info fa-lg">About Us</span>
+                    <i className="fa fa-info fa-lg"></i>
+                    About Us
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/menu">
-                    <span className="fa fa-list fa-lg">Menu</span>
+                    <i className="fa fa-list fa-lg"></i>
+                    Menu
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/contactus">
-                    <span className="fa fa-address-card fa-lg">Contact Us</span>
+                    <i className="fa fa-address-card fa-lg"></i>
+                    Contact Us
                   </NavLink>
                 </NavItem>
               </Nav>
               <Nav className="ml-auto" navbar>
                 <NavItem>
                   <Button outline onClick={this.toggleModal}>
-                    <span className="fa fa-sign-in fa-lg"></span>Login
+                    <i className="fa fa-sign-in fa-lg"></i>Login
                   </Button>
                 </NavItem>
               </Nav>
             </Collapse>
           </div>
         </Navbar>
-        <Jumbotron>
+        {/* <Jumbotron>
           <div className="container">
             <div className="row row-header">
               <div className="col-12 col-sm-6">
-                <h1>Ristorante Del Calte huyarte</h1>
-                <p>We take inspiration 2 weeks pidartion lorem ipsum dolor</p>
+                <h1>Ristorante Del Carte</h1>
+                <p>We take inspiration 2 weeks </p>
               </div>
             </div>
           </div>
-        </Jumbotron>
+        </Jumbotron> */}
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
           <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
           <ModalBody>

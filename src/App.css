@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,7 +35,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 .row-header {
   margin: 0px auto;
   padding: 0px auto;
@@ -125,6 +125,3 @@ address {
   transform: translateX(100%);
   transition: all 300ms ease-out;
 }
-
-/* Redesign */
-

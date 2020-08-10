@@ -13,18 +13,19 @@ import { baseUrl } from "../shared/baseUrl";
 const About = (props) => {
   const people = props.leaders.leaders.map((lead) => {
     return (
-      <Media className="col-12 mt-4" key={lead.id}>
+      <Media className="col-12 mt-4 media-leaders p-2d" key={lead.id}>
         <Media
-          width="100"
-          height="100"
+          width="200px"
           className="m-2"
           object
           src={baseUrl + lead.image}
         />
         <Media body>
-          <Media heading>{lead.name}</Media>
-          <Media className="ml-5">{lead.designation}</Media>
-          <Media>{lead.description}</Media>
+          <Media className="ml-3" heading>
+            {lead.name}
+          </Media>
+          <Media className="ml-4">{lead.designation}</Media>
+          <Media className="ml-5">{lead.description}</Media>
         </Media>
       </Media>
     );
