@@ -69,23 +69,14 @@ address {
 .navbar-dark {
   background-color: #512da8;
 }
-.card-table {
-  min-width: 350px;
-}
 .about-table {
   text-align: left;
 }
 
-.about-table td {
-  text-align: left;
-}
-
 .about-table b td {
-  padding-right: 50px;
-  width: 150px;
+  padding-right: 30px;
 }
 .about-history {
-  padding: 0px 50px 0px 0px;
   text-align: left;
 }
 .about-comments {
@@ -117,11 +108,46 @@ address {
 
 .page-exit {
   opacity: 1;
+  transition: all 12s ease-out !important;
   transform: translateX(0%);
 }
 
-.page-exit-active {
+/* .page-exit-active {
   opacity: 0.01;
   transform: translateX(100%);
-  transition: all 300ms ease-out;
+  transition: all 12300ms ease-out;
+} */
+
+.home {
+  /* padding: 70px 0px; */
+  /* background: url("/assets/images/frame-bg.png") #f1c47c center; */
+  background-size: 60%;
+  position: relative;
+}
+.home-block-cut-img {
+  width: 30%;
+  z-index: -1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.home-info,
+.home-block,
+.menu {
+  background: url("/assets/images/frame-bg.png") center top;
+  background-size: 70%;
+  padding-bottom: 160px;
+}
+.contact,
+.about {
+  background: url("/assets/images/frame-bg.png") #242321 center top;
+  background-size: 70%;
+  /* padding-bottom: 50px; */
+  color: rgb(235, 235, 235);
+}
+
+.home-info {
+  padding: 70px 0px 0px 0px;
+  /* background: url("/assets/images/frame-bg.png") #f5d8a8 center top; */
+  background-size: 70%;
 }

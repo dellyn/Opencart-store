@@ -141,7 +141,13 @@ class Main extends Component {
               <Route
                 exact
                 path="/menu"
-                component={() => <Menu dishes={this.props.dishes} />}
+                component={() => (
+                  <Menu
+                    dishes={this.props.dishes}
+                    isLoading={this.props.dishes.isLoading}
+                    errMess={this.props.dishes.errMess}
+                  />
+                )}
               />
               <Route path="/menu/:dishId" component={DishWithId} />
               <Route

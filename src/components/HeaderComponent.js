@@ -24,6 +24,7 @@ class Header extends Component {
     this.state = {
       isNavOpen: false,
       isModalOpen: false,
+      test: false,
     };
     this.toggleNav = this.toggleNav.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
@@ -45,49 +46,60 @@ class Header extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar expand="md">
+        <Navbar expand="md" className="header col-md-12">
+          <NavbarToggler
+            onClick={this.toggleNav}
+            className={this.state.isNavOpen ? "togg-open" : "togg-close"}
+          />
+          <NavbarBrand className="logo-lay logo-lay-md " href="/">
+            <img
+              src="assets/images/logo.png"
+              className="logo mr-3 m-md-auto "
+              alt="Ristorante Con Kiev"
+            />
+          </NavbarBrand>
           <div className="container">
             <NavbarToggler onClick={this.toggleNav} />
 
-            <NavbarBrand className="mr-auto" href="/">
+            <NavbarBrand className="logo-lay" href="/">
               <img
                 src="assets/images/logo.png"
-                height="40"
-                width="51"
+                className="logo mr-3 m-md-auto "
                 alt="Ristorante Con Kiev"
               />
             </NavbarBrand>
             <Collapse isOpen={this.state.isNavOpen} navbar>
-              <Nav className="" navbar>
-                <NavItem>
+              <Nav navbar>
+                <NavItem onClick={this.toggleNav}>
                   <NavLink className="nav-link" to="/home">
-                    <i className="fa fa-home fa-lg"></i>
+                    {/* <i className="fa fa-home fa-lg"></i> */}
                     Home
                   </NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem onClick={this.toggleNav}>
                   <NavLink className="nav-link" to="/aboutus">
-                    <i className="fa fa-info fa-lg"></i>
+                    {/* <i className="fa fa-info fa-lg"></i> */}
                     About Us
                   </NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem onClick={this.toggleNav}>
                   <NavLink className="nav-link" to="/menu">
-                    <i className="fa fa-list fa-lg"></i>
+                    {/* <i className="fa fa-list fa-lg"></i> */}
                     Menu
                   </NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem onClick={this.toggleNav}>
                   <NavLink className="nav-link" to="/contactus">
-                    <i className="fa fa-address-card fa-lg"></i>
+                    {/* <i className="fa fa-address-card fa-lg"></i> */}
                     Contact Us
                   </NavLink>
                 </NavItem>
               </Nav>
-              <Nav className="ml-auto" navbar>
+              <Nav className="ml-auto nav-second" navbar>
                 <NavItem>
-                  <Button outline onClick={this.toggleModal}>
-                    <i className="fa fa-sign-in fa-lg"></i>Login
+                  <Button onClick={this.toggleModal} className="login-btn">
+                    Log in
+                    {/* <i className="fa fa-sign-in fa-lg"></i>Login */}
                   </Button>
                 </NavItem>
               </Nav>
@@ -104,7 +116,11 @@ class Header extends Component {
             </div>
           </div>
         </Jumbotron> */}
-        <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+        <Modal
+          isOpen={this.state.isModalOpen}
+          toggle={this.toggleModal}
+          className=""
+        >
           <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
           <ModalBody>
             <Form onSubmit={this.handleLogin}>
@@ -136,8 +152,8 @@ class Header extends Component {
                   Remember me
                 </Label>
               </FormGroup>
-              <Button type="submit" value="submit" className="bg-primary">
-                Login
+              <Button type="submit" className="modal-btn mt-3">
+                Log in
               </Button>
             </Form>
           </ModalBody>
