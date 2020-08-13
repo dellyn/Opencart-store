@@ -10,7 +10,7 @@
     "bootstrap-social": "^5.1.1",
     "cross-fetch": "^3.0.5",
     "font-awesome": "^4.7.0",
-    "fontawesome": "^6.1.0",
+    "fontawesome": "^5.6.3",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

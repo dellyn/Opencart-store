@@ -33,8 +33,8 @@ class Contact extends Component {
       values.contactType,
       values.message
     );
-    console.log("Тест: " + JSON.stringify(values));
-    // alert("Current state is: " + JSON.stringify(values));
+    // console.log("Тест: " + JSON.stringify(values));
+    alert("Current state is: " + JSON.stringify(values));
     this.props.resetFeedbackForm();
   }
 
@@ -58,11 +58,10 @@ class Contact extends Component {
             <div className="col-lg-6 col-md-6 col-sm-10 col-10 mt-4">
               <h4 className="mb-4">Location Information</h4>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.070685980543!2d1.2584745662016523!3d45.8354264021988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54a02933785731%3A0x6bfd3f96c747d9f7!2z0KTRgNCw0L3RhtC40Y8!5e0!3m2!1sru!2sua!4v1597181779874!5m2!1sru!2sua"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95056.2357548463!2d-87.69572538689496!3d41.881944421995826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m3!3e6!4m0!4m0!5e0!3m2!1sru!2sua!4v1597315769300!5m2!1sru!2sua"
                 frameborder="0"
                 allowfullscreen=""
                 aria-hidden="false"
-                // tabindex="0"
               ></iframe>
             </div>
 

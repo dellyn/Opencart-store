@@ -15,8 +15,8 @@ function Footer(props) {
         ></path>
       </svg>
       <div className="container">
-        <div className="row align-items-baseline justify-content-center justify-content-lg-start">
-          <div className="nav-links col-lg-2 col-md-3 col-sm-3 col-5 mt-2">
+        <div className="row align-items-baseline justify-content-center justify-content-lg-start xs-column">
+          <div className="nav-links col-lg-2 col-md-3 col-sm-3 col-5 mt-2 xs-center">
             <h5>Navigation</h5>
             <ul className="">
               <li>
@@ -33,39 +33,34 @@ function Footer(props) {
               </li>
             </ul>
           </div>
-          <div className="address col-lg-2 col-md-3 col-sm-4 col-5">
+          <div className="address col-lg-2 col-md-3 col-sm-4 col-5 xs-center">
             <h5>Our Address</h5>
             <address>
-              29B Nyzhenska Street
+              62 B Madison St
               <br />
-              Clear Water Bay, Kowloon
+              Chicago, IL 60601
               <br />
-              Kiev, Ukraine
+              11:00am - 12:00pm
               <br />
               <i className="fa fa-phone fa-lg"></i>: +852 1234 5676
               <br />
               <i className="fa fa-fax fa-lg"></i>: +852 8765 4322
               <br />
               <i className="fa fa-envelope fa-lg"></i>:{" "}
-              <a href="mailto:confusion@food.net">ingvarmail@food.net</a>
+              <a href="mailto:pizzlicemail@food.net">pizzlicemail@food.net</a>
             </address>
           </div>
 
-          <div className="col-lg-3 col-md-4 col-sm-5 col-7 mt-2">
+          <div className="col-lg-3 col-md-4 col-sm-5 col-8 mt-2 ">
             <h5>Social Media</h5>
             <div class="frame ">
               <a href="http://www.facebook.com" class="btn fb">
                 <i class="fa fa-facebook"></i>
               </a>
-              {/* <a href="http://twitter.com/" class="btn twt">
-                <i class="fa fa-twitter"></i>
-              </a> */}
+
               <a href="http://www.instagram.com" class="btn inst">
                 <i class="fa fa-instagram"></i>
               </a>
-              {/* <a href="http://www.linkedin.com/in/" class="btn ldn">
-                <i class="fa fa-linkedin"></i>
-              </a> */}
               <a href="http://youtube.com/" class="btn ytb">
                 <i class="fa fa-youtube"></i>
               </a>

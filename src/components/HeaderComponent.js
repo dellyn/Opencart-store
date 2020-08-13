@@ -6,7 +6,6 @@ import {
   NavbarToggler,
   Collapse,
   NavItem,
-  Jumbotron,
   Button,
   Modal,
   ModalHeader,
@@ -53,9 +52,9 @@ class Header extends Component {
           />
           <NavbarBrand className="logo-lay logo-lay-md " href="/">
             <img
-              src="assets/images/logo.png"
+              src="/assets/images/logo.png"
               className="logo mr-3 m-md-auto "
-              alt="Ristorante Con Kiev"
+              alt="logo"
             />
           </NavbarBrand>
           <div className="container">
@@ -65,7 +64,7 @@ class Header extends Component {
               <img
                 src="assets/images/logo.png"
                 className="logo mr-3 m-md-auto "
-                alt="Ristorante Con Kiev"
+                alt="logo"
               />
             </NavbarBrand>
             <Collapse isOpen={this.state.isNavOpen} navbar>

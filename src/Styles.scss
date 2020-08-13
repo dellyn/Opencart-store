@@ -49,6 +49,9 @@ section {
   button {
     font-family: $Montserrat;
     color: #fff;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
     i {
       line-height: 0px;
       margin-right: 7px;
@@ -168,15 +171,16 @@ section {
     bottom: -30%;
   }
 
-  .jackpots {
+  .title-light {
     font-family: moon;
     font-size: 6.3rem;
-    animation: jackpots 1s 0s ease infinite;
-    -moz-animation: jackpots 1s 0s ease infinite;
-    -webkit-animation: jackpots 1s 0s ease infinite;
-    -o-animation: jackpots 1s 0s ease infinite;
+    letter-spacing: .02em;
+    animation: title-light 1s 0s ease infinite;
+    -moz-animation: title-light 1s 0s ease infinite;
+    -webkit-animation: title-light 1s 0s ease infinite;
+    -o-animation: title-light 1s 0s ease infinite;
   }
-  @keyframes jackpots {
+  @keyframes title-light {
     0%,
     100% {
       text-shadow: -0.1vw 0vw 0.1vw #fed128, -0.15vw 0vw 0.2vw #fed128,
@@ -197,7 +201,42 @@ section {
 }
 iframe {
   width: 100%;
-  height: 300px;
+  height: 400px;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+  background-color: #ffffff;
+  padding: 5px;
+  border: 10px;
+  li {
+    margin: 10px 0px;
+    span {
+    }
+    .comment {
+      display: block;
+      font-weight: bold;
+    }
+    .data {
+      font-size: 0.9em;
+      display: inline-block;
+      color: #9c9c9c;
+      margin-left: 15px;
+    }
+    .rating {
+      display: inline-block;
+      span {
+        display: inline-block;
+
+        color: #fff129;
+        margin: 1px;
+      }
+    }
+    .author,
+    .data {
+      display: inline-block;
+    }
+  }
 }
 // Footer
 .footer {
@@ -216,7 +255,6 @@ iframe {
     transform: scale(-1, 1);
   }
   .frame {
-    // background: #eaedf1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -228,7 +266,7 @@ iframe {
     height: 40px;
     width: 40px;
     border-radius: 3px;
-    background: #e0e5ec;
+    background: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -344,7 +382,8 @@ iframe {
     right: -10px;
     top: 0;
     letter-spacing: 7px;
-    transform: rotate(45deg);
+    transform: rotate(40deg);
+    border-radius: 5px 0px 5px 0px;
     padding: 5px 5px 5px 10px;
   }
 }
@@ -471,11 +510,19 @@ $roni: #cc333f;
 .navbar-collapse {
   min-height: 40px;
 }
+.dish-detail {
+  .label {
+    font-size: 1.3em;
+    right: 7px;
+    top: -7px;
+    transform: rotate(0deg);
+    padding: 5px 5px 5px 10px;
+  }
+}
 
 @media screen and (max-width: 1000px) {
   .home {
     .sign-bg-img {
-      // background-size: 50%;
       width: 65vw;
       top: 6%;
     }
@@ -569,7 +616,6 @@ $roni: #cc333f;
 
   .home {
     .sign-bg-img {
-      // background-size: 50%;
       width: 65vw;
       top: 9%;
     }
@@ -622,7 +668,7 @@ $roni: #cc333f;
       .sign-bg-img {
         opacity: 0.8;
       }
-      .jackpots {
+      .title-light {
         padding: 0;
         font-size: 19vw;
         text-align: center;
@@ -633,6 +679,9 @@ $roni: #cc333f;
   h3,
   h4 {
     text-align: center;
+  }
+  .dish-detail {
+    overflow: hidden;
   }
 }
 @media screen and (max-width: 500px) {
@@ -650,7 +699,17 @@ $roni: #cc333f;
     }
   }
 }
-
+@media screen and (max-width: 400px) {
+  .xs-center {
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0;
+  }
+  .xs-column {
+    flex-direction: column;
+  }
+}
 // Scrollbar
 ::-webkit-scrollbar-track {
   background-color: #e1e1e1;

@@ -14,7 +14,6 @@ import { actions } from "react-redux-form";
 
 import {
   postComment,
-  // addComment,
   fetchDishes,
   fetchComments,
   fetchPromos,

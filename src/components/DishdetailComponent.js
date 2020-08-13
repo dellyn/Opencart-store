@@ -20,6 +20,7 @@ import { Control, LocalForm, Errors } from "react-redux-form";
 import { Loading } from "./LoadingComponent";
 import { baseUrl } from "../shared/baseUrl";
 import { FadeTransform, Fade, Stagger } from "react-animation-components";
+// import { render } from "@testing-library/react";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -38,12 +39,14 @@ export class CommentForm extends Component {
   }
 
   handleSubmit(values) {
+    console.log(values);
     this.toggleModal();
 
     this.props.postComment(
       this.props.dishId,
       values.rating,
-      values.author,
+      // values.author,
+      values.yourname,
       values.comment
     );
   }
@@ -71,9 +74,10 @@ export class CommentForm extends Component {
                   <Control.select
                     model=".rating"
                     name="rating"
+                    id="rating"
                     className="form-control"
                   >
-                    <option>1</option>
+                    <option selected>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
@@ -119,7 +123,7 @@ export class CommentForm extends Component {
                     model=".comment"
                     id="comment"
                     name="comment"
-                    rows="6"
+                    rows="2"
                     className="form-control"
                   />
                 </Col>
@@ -140,20 +144,39 @@ export class CommentForm extends Component {
 }
 function RenderComments({ comments, postComment, dishId }) {
   var commentList = comments.map((comment) => {
+    const num = comment.rating;
+    let stars = [];
+
+    // If rating = 1
+    if (isNaN(num)) {
+      stars.push(null);
+    } else {
+      for (let i = 0; i < num; i++) {
+        stars.push(null);
+      }
+    }
+    const rating = stars.map(function (item, index) {
+      return (
+        <span key={index}>
+          {item}
+          <i class="fa fa-star"></i>
+        </span>
+      );
+    });
     return (
       <Fade in>
         <li key={comment.id}>
-          {comment.comment}
-          <br />
-          <br />
-          -- {comment.author},{" "}
-          {new Intl.DateTimeFormat("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "2-digit",
-          }).format(new Date(Date.parse(comment.date)))}
-          <br />
-          <br />
+          <div className="rating">{rating}</div>
+
+          <span className="comment">{comment.comment}</span>
+          <span className="author"> {comment.author}</span>
+          <span className="data">
+            {new Intl.DateTimeFormat("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "2-digit",
+            }).format(new Date(Date.parse(comment.date)))}
+          </span>
         </li>
       </Fade>
     );
@@ -161,7 +184,7 @@ function RenderComments({ comments, postComment, dishId }) {
 
   return (
     <div>
-      <h4>Comments</h4>
+      <h4 className="mt-3">Comments</h4>
       <ul className="list-unstyled">
         <Stagger in>{commentList}</Stagger>
       </ul>
@@ -171,8 +194,12 @@ function RenderComments({ comments, postComment, dishId }) {
 }
 
 function RenderDish({ dish }) {
+  let label = "";
+  if (dish.label !== undefined) {
+    label = <CardText className="label">{dish.label}</CardText>;
+  }
   return (
-    <div className="col-12 m-1">
+    <div className="col-12 m-1 mt-4 mb-5">
       <FadeTransform
         in
         FadeTransformProps={{
@@ -184,11 +211,14 @@ function RenderDish({ dish }) {
           <CardBody>
             <CardTitle>{dish.name}</CardTitle>
             <CardText>{dish.description}</CardText>
-            <CardText className="price">{dish.price}</CardText>
-            <CardText className="label">{dish.label}</CardText>
-            <Button>
-              Eat now! <i className="fa fa-shopping-cart"></i>
-            </Button>
+            {label}
+            <div className="df">
+              <CardText className="price">
+                <strong>{dish.price}$</strong>
+              </CardText>
+
+              <Button className="ml-auto">Buy now</Button>
+            </div>
           </CardBody>
         </Card>
       </FadeTransform>
@@ -206,12 +236,12 @@ const DishDetail = (props) => {
   } else if (props.errMess) {
     return (
       <div className="loading-component">
-        <h3>{props.errMess}</h3>
+        <h2>{props.errMess}</h2>
       </div>
     );
   } else if (props.dish != null)
     return (
-      <div className="">
+      <section className="dish-detail">
         <div className="container">
           <div className="row">
             <Breadcrumb>
@@ -221,25 +251,25 @@ const DishDetail = (props) => {
               <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
             </Breadcrumb>
             <div className="col-12">
-              <h3>{props.dish.name}</h3>
+              <h2>{props.dish.name}</h2>
               <hr />
             </div>
           </div>
-          <div className="row">
-            <div className="col-12 col-md-5 m-1">
+          <div className="row justify-content-center">
+            <div className="col-md-5 col-sm-8 col-11  m-1">
               <RenderDish dish={props.dish} />
             </div>
-            <div className="col-12 col-md-5 m-1">
+            <div className="col-12 col-md-6 m-1">
               <RenderComments
                 comments={props.comments}
-                addComment={props.addComment}
+                // addComment={props.addComment}
                 dishId={props.dish.id}
                 postComment={props.postComment}
               />
             </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   else return <div></div>;
 };

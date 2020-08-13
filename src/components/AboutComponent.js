@@ -18,6 +18,7 @@ const About = (props) => {
         key={lead.id}
       >
         <Media className="m-2" object src={baseUrl + lead.image} />
+        
         <Media body className="">
           <Media className="ml-3" heading>
             {lead.name}

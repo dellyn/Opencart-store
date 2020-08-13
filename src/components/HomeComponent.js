@@ -53,7 +53,7 @@ function Home(props) {
           />
           <div class="sign-three row">
             {/* <div class="restaurant">Restaurant </div> */}
-            <div class="jackpots col-12">Pizzlice time</div>
+            <h1 class="title-light col-12">Pizza time</h1>
           </div>
 
           <div className="sign-lay df">
@@ -71,8 +71,7 @@ function Home(props) {
               Call <span>0743 888 555</span>
             </p>
             <p className="sign-contact-type">
-              <i className="fas fa-mouse-pointer"></i>
-              <i className="fas fa-shopping-cart"></i>
+              <i className="fa fa-mouse-pointer"></i>
               Or Log in to <span>website</span>
             </p>
           </div>
